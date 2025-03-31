@@ -1,4 +1,4 @@
-FROM node:22-alpine
+FROM python:alpine
 LABEL maintainer="devops@signiant.com"
 
 # Add our bldmgr user
@@ -15,9 +15,7 @@ RUN chmod +r /tmp/apk.packages.list && \
 
 # Azure CLI
 COPY pip.packages.list /tmp/pip.packages.list
-RUN python3 -m ensurepip && \
-    python3 -m pip install --upgrade pip && \
-    python3 -m pip install -r /tmp/pip.packages.list && \
+RUN python3 -m pip install -r /tmp/pip.packages.list && \
     az bicep install
 
 # Gcloud CLI for IAP tunnel
