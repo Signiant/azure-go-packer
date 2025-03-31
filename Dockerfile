@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:22
+FROM node:22-alpine
 LABEL maintainer="devops@signiant.com"
 
 # Add our bldmgr user
