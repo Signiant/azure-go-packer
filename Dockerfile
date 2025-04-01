@@ -1,12 +1,6 @@
 FROM python:alpine
 LABEL maintainer="devops@signiant.com"
 
-# Add our bldmgr user
-ENV BUILD_USER bldmgr
-ENV BUILD_PASS bldmgr
-ENV BUILD_USER_ID 10012
-ENV BUILD_USER_GROUP users
-
 # OS packages
 COPY apk.packages.list /tmp/apk.packages.list
 RUN chmod +r /tmp/apk.packages.list && \
