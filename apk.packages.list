@@ -10,7 +10,7 @@ linux-headers
 make
 musl-dev
 openssl-dev
-python3~3.11
+python3-dev
 unzip
 wget
 zip
