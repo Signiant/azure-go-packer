@@ -2,10 +2,13 @@ FROM mcr.microsoft.com/azure-functions/python:4-python3.11
 LABEL maintainer="devops@signiant.com"
 
 # OS packages
-COPY apk.packages.list /tmp/apk.packages.list
-RUN chmod +r /tmp/apk.packages.list && \
-    apt-get update && \
-    apt-get -y install `cat /tmp/apk.packages.list`
+# COPY apk.packages.list /tmp/apk.packages.list
+# RUN chmod +r /tmp/apk.packages.list && \
+#     apt-get update && \
+#     apt-get -y install `cat /tmp/apk.packages.list`
+
+RUN apt update \
+  && apt install -y python3 python3-pip figlet jq sudo terraform ssh zip
 
 # Azure CLI
 COPY pip.packages.list /tmp/pip.packages.list
