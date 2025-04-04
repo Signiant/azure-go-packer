@@ -1,4 +1,4 @@
-FROM python:3.11-alpine
+FROM mcr.microsoft.com/azure-functions/python:4-python3.11
 LABEL maintainer="devops@signiant.com"
 
 # OS packages
