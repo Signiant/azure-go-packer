@@ -8,7 +8,7 @@ LABEL maintainer="devops@signiant.com"
 #     apt-get -y install `cat /tmp/apk.packages.list`
 
 RUN apt update \
-  && apt install -y python3 python3-pip figlet jq sudo terraform ssh zip
+  && apt install -y python3 python3-pip figlet jq zip
 
 # Azure CLI
 COPY pip.packages.list /tmp/pip.packages.list
