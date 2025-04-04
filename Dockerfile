@@ -4,8 +4,8 @@ LABEL maintainer="devops@signiant.com"
 # OS packages
 COPY apk.packages.list /tmp/apk.packages.list
 RUN chmod +r /tmp/apk.packages.list && \
-    apk --update add `cat /tmp/apk.packages.list` && \
-    rm -rf /var/cache/apk/*
+    apt-get update && \
+    apt-get -y install `cat /tmp/apk.packages.list`
 
 # Azure CLI
 COPY pip.packages.list /tmp/pip.packages.list
